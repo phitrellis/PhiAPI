@@ -11,6 +11,7 @@ POST https://chat.phitrellis.com/api/data
 参数：
 {
   "user": "your key",
-  "question": "问题"
+  "question": "问题",
+  "model": "GPT4"  # 支持 GPT4、GPT35、CLAUDE_V1
 }
 ```
