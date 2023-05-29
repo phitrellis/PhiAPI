@@ -4,7 +4,8 @@ import requests
 data = {
     'session': 'uuid v4',
     'user': 'your token',
-    'question': 'hi'
+    'question': 'hi',
+    'model': 'GPT35'
 }
 response = requests.post('http://openai.yige.space/api/data/', data=data)  # 提问
 if response.status_code == 200:  # 判断是否正常返回
