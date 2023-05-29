@@ -1,5 +1,5 @@
 # GPT4API
-提供GPT4、GPT3.5、Claude V1等模型的在线统一调用接口
+提供GPT4、GPT3.5、Claude V1 100K 等模型的在线统一调用接口
 ## 1. 接口调用
 ### 1.1 提问
 ```
@@ -8,7 +8,7 @@ POST http://openai.yige.space/api/data/
 {
   "user": "your key",
   "question": "问题",
-  "model": "GPT4",  # 支持 GPT4、GPT35、CLAUDE_V1，三者任选一个
+  "model": "GPT4",  # 对话所用的模型，支持 GPT4、GPT35、CLAUDE_V1，三者任选一个
   "session": "make a uuid4"  # 如果问答需要支持上下文，则传入一个自己生成的uuid4，并在后续传入此同一个值，当开启新的会话的时候传入新uuid4，如果不需要支持上下文，则无需传入
 }
 ```
