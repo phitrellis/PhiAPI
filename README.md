@@ -8,8 +8,8 @@ POST http://openai.yige.space/api/data/
 {
   "user": "your key",
   "question": "问题",
-  "model": "GPT4",  # 支持 GPT4、GPT35、CLAUDE_V1
-  "session": "make a uuid4"
+  "model": "GPT4",  # 支持 GPT4、GPT35、CLAUDE_V1，三者任选一个
+  "session": "make a uuid4"  # 如果问答需要支持上下文，则传入一个自己生成的uuid4，并在后续传入此同一个值，当开启新的会话的时候传入新uuid4，如果不需要支持上下文，则无需传入
 }
 ```
 ### 1.2 返回
@@ -40,3 +40,23 @@ GET http://openai.yige.space/api/data/{id}/
 ### 1.4 报错
 1. 当触发敏感词、问题过长或会话过长的时候status_code为400，且code同为400
 2. 当欠费的时候，status_code为401，且code同为401
+
+## 2. 示例
+```python
+data = {
+    'session': 'uuid v4',
+    'user': 'your token',
+    'question': 'hi'
+}
+response = requests.post('http://openai.yige.space/api/data/', data=data)
+if response.status_code == 200:
+    id = response.json()['data']['id']
+    while True:
+        time.sleep(1)
+        response = requests.get(f'http://openai.yige.space/api/data/{id}/')
+        if response.status_code == 200 and response.json()['data']['status'] == 2:
+            if type == 'data':
+                answer = response.json()['data']['answer']
+                print(answer)
+                break
+```
