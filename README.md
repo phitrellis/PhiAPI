@@ -43,6 +43,9 @@ GET http://openai.yige.space/api/data/{id}/
 
 ## 2. 示例
 ```python
+import time
+import requests
+
 data = {
     'session': 'uuid v4',
     'user': 'your token',
