@@ -8,6 +8,7 @@ POST http://openai.yige.space/api/data/
 {
   "user": "your key",
   "question": "问题",
+  "question_type": "在线搜索",  # 可以为空
   "model": "GPT4",  # 对话所用的模型，支持 GPT4、GPT35、CLAUDE_V1，三者任选一个
   "session": "make a uuid4"  # 如果问答需要支持上下文，则传入一个自己生成的uuid4，并在后续传入此同一个值，当开启新的会话的时候传入新uuid4，如果不需要支持上下文，则无需传入
 }
