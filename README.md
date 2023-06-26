@@ -18,8 +18,8 @@
 14. 文献翻译、润色
 15. 地址解析
 
-## 1. 接口调用
-### 1.1 提问
+## 2. 接口调用
+### 2.1 提问
 ```
 POST http://openai.yige.space/api/data/
 参数：
@@ -31,7 +31,7 @@ POST http://openai.yige.space/api/data/
   "session": "make a uuid4"  # 如果问答需要支持上下文，则传入一个自己生成的uuid4，并在后续传入此同一个值，当开启新的会话的时候传入新uuid4，如果不需要支持上下文，则无需传入
 }
 ```
-### 1.2 返回
+### 2.2 返回
 ```
 {
     "status": "OK",
@@ -46,21 +46,21 @@ POST http://openai.yige.space/api/data/
 ```
 重点关注 id,status,answer
 
-### 1.2 取结果
+### 2.3 取结果
 轮询下面的接口（建议1s一次），当返回status为2的时候表示已生成答案
 ```
 GET http://openai.yige.space/api/data/{id}/
 结果同1.2
 ```
 
-### 1.3 会话
+### 2.4 会话
 新建会话时生成一个uuid4，传入1.1中，每次新建会话重新生成即可。
 
-### 1.4 报错
+### 2.5 报错
 1. 当触发敏感词、问题过长或会话过长的时候status_code为400，且code同为400
 2. 当欠费的时候，status_code为401，且code同为401
 
-## 2. 示例
+## 3. 示例
 ```python
 import time
 import requests
