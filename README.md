@@ -50,7 +50,7 @@ POST http://openai.yige.space/api/data/
 轮询下面的接口（建议1s一次），当返回status为2的时候表示已生成答案
 ```
 GET http://openai.yige.space/api/data/{id}/
-结果同1.2
+结果同2.2
 ```
 
 ### 2.4 会话
