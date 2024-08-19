@@ -3,7 +3,7 @@
 - 平台网址：https://chat.phitrellis.com
 
 # PhiAPI
-提供新闻事件抽取、摘要、翻译、文档信息标准化抽取等多种接口及普通聊天对话接口，支持的模型包括：GPT4、GPT3.5、Claude V2 100K、文心一言等
+提供新闻事件抽取、摘要、翻译、文档信息标准化抽取等多种接口及普通聊天对话接口，支持的模型包括：GPT系列、Claude系列、文心一言等
 
 ## 1. 接口列表
 1. [通用对话](#21-提问)
@@ -33,7 +33,7 @@ POST http://openai.yige.space/api/data/
   "user": "your key",
   "question": "问题",
   "question_type": "在线搜索",  # 可以为空
-  "model": "GPT4",  # 对话所用的模型，支持 GPT4、GPT35、CLAUDE_V2、ERNIE_TURBO（文心一言），任选一个
+  "model": "GPT4",  # 对话所用的模型，支持 GPT4、GPT4omini、CLAUDE_V3_OPUS、CLAUDE_V3_SONNET、ERNIE_TURBO（文心一言），任选一个
   "session": "make a uuid4"  # 如果问答需要支持上下文，则传入一个自己生成的uuid4，并在后续传入此同一个值，当开启新的会话的时候传入新uuid4，如果不需要支持上下文，则无需传入
 }
 ```
