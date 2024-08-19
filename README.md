@@ -64,7 +64,7 @@ GET http://openai.yige.space/api/data/{id}/
 
 ### 2.5 报错
 1. 当触发敏感词、问题过长或会话过长的时候status_code为400，且code同为400
-2. 当欠费的时候，status_code为401，且code同为401
+2. 当欠费的时候，status_code为402，且code同为402
 
 ## 3. 示例
 ```python
