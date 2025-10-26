@@ -22,24 +22,25 @@ POST http://openai.yige.space/api/data/
   "user": "your key",
   "question": "问题",
   "question_type": "在线搜索",  # 可以为空
-  "model": "GPT4",  # 对话所用的模型，任选一个，具体支持模型见2. 支持模型
+  "model": "GPT5",  # 对话所用的模型，任选一个，具体支持模型见2. 支持模型
   "session": "make a uuid4"  # 如果问答需要支持上下文，则传入一个自己生成的uuid4，并在后续传入此同一个值，当开启新的会话的时候传入新uuid4，如果不需要支持上下文，则无需传入
 }
 ```
 ### 1.3 返回
 ```
 {
-    "status": "OK",
-    "code": 201,
-    "data": {
-        "id": "4c9782af-8731-4074-b2dd-739575f83564",
-        "status": 0,
-        "answer": null,
-        "session": "uuid4"
+    'status': 'OK',
+    'code': 201,
+    'data': {
+        'id': 'xxx',
+        'question_type': None,
+        'model': 'GPT5',
+        'session': 'xxx',
+        'config': None,
+        'answer_id': 'xxx'
     }
 }
 ```
-重点关注 id,status,answer
 
 ### 1.4 取结果
 轮询下面的接口（建议1s一次），当返回status为2的时候表示已生成答案
