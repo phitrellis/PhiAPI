@@ -7,7 +7,7 @@
 
 ## 1. 接口调用
 ### 1.1 上传附件
-如需上传附近，如PDF、DOCX、MP3等，需要先调用此接口
+提问时如需上传附件，如PDF、DOCX、MP3等，需要先调用此接口
 ```
 POST http://openai.yige.space/api/usermedia/upload_media/
 参数：传入 file 文档及用户 user
