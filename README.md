@@ -9,14 +9,14 @@
 ### 1.1 上传附件
 提问时如需上传附件，如PDF、DOCX、MP3等，需要先调用此接口
 ```
-POST http://openai.yige.space/api/usermedia/upload_media/
+POST https://openai.yige.space/api/usermedia/upload_media/
 参数：传入 file 文档及用户 user
 具体见 3.1 示例上传
 ```
 
 ### 1.2 提问
 ```
-POST http://openai.yige.space/api/data/
+POST https://openai.yige.space/api/data/
 参数：
 {
   "user": "your key",
@@ -45,7 +45,7 @@ POST http://openai.yige.space/api/data/
 ### 1.4 取结果
 轮询下面的接口（建议1s一次），当返回status为2的时候表示已生成答案
 ```
-GET http://openai.yige.space/api/data/{id}/
+GET https://openai.yige.space/api/data/{id}/
 结果同1.2
 ```
 
@@ -74,7 +74,7 @@ DEEPSEEK_THINK
 
 ```python
 path = '/your/path/to/file'
-response = requests.post('http://openai.yige.space/api/usermedia/upload_media/?user={用户标识}', files={'file': open(path, 'rb')})
+response = requests.post('https://openai.yige.space/api/usermedia/upload_media/?user={用户标识}', files={'file': open(path, 'rb')})
 print(response.json())
 # {'status': 'OK', 'code': 200, 'data': 'xxx'}
 # 拿到 data 中的链接，下一步提问时传入使用
@@ -97,13 +97,13 @@ data = {
     'config': config,  # 如果需要上传文档，则传入 config
     'model': 'GPT5'
 }
-response = requests.post('http://openai.yige.space/api/data/', json=data)  # 提问
+response = requests.post('https://openai.yige.space/api/data/', json=data)  # 提问
 print(response.json())
 if response.status_code == 200:  # 判断是否正常返回
     id = response.json()['data']['answer_id']  # 获取本次提问返回的 answer id
     while True:
         time.sleep(1)  # 1s 轮询一次，等待结果
-        response = requests.get(f'http://openai.yige.space/api/answer/{id}/?user={用户标识}')  # 查询结果
+        response = requests.get(f'https://openai.yige.space/api/answer/{id}/?user={用户标识}')  # 查询结果
         print(response.json())
         if response.status_code == 200 and response.json()['data']['status'] == 2:  # 正常处理完毕
             answer = response.json()['data']['answer']  # 取出结果
