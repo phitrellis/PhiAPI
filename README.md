@@ -3,7 +3,7 @@
 - 平台网址：https://chat.phitrellis.com
 
 # PhiAPI
-提供新闻事件抽取、摘要、翻译、文档信息标准化抽取等多种接口及普通聊天对话接口，支持的模型包括：GPT系列、Claude系列、文心一言等
+提供新闻事件抽取、摘要、翻译、文档信息标准化抽取等多种接口及普通聊天对话接口，支持的模型包括：GPT系列、Claude系列、GEMINI系列、DeepSeek等
 
 ## 1. 接口调用
 ### 1.1 上传附件
@@ -57,16 +57,17 @@ GET https://openai.yige.space/api/data/{id}/
 2. 当欠费的时候，status_code为402，且code同为402
 
 ### 2. 支持模型
-GPT5
-O1
-O3
-O3_PRO
-CODEX
-OPUS
-SONNET
-GEMINI_PRO
-DEEPSEEK
-DEEPSEEK_THINK
+- GPT5
+- O1
+- O3
+- O3_PRO
+- CODEX
+- OPUS
+- SONNET
+- GEMINI_PRO
+- GEMINI_FLASH
+- DEEPSEEK
+
 
 ## 3. 示例
 
