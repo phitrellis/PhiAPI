@@ -79,7 +79,7 @@ GET https://openai.yige.space/api/data/{id}/
 
 ```python
 headers = {
-    'X-API-KEY': '用户标识'  # 登录后获取的 token
+    'X-API-KEY': '{用户标识}'  # 登录后获取的 token
 }
 path = '/your/path/to/file'
 response = requests.post('https://openai.yige.space/api/usermedia/upload_media/', files={'file': open(path, 'rb')}, headers=headers)
