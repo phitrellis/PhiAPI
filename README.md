@@ -7,18 +7,18 @@
 
 ## 1. 接口调用
 ### 1.1 鉴权
-调用所有API时，在header里传入X-API-KEY，其值为用户标识（需先申请开通API权限或购买企业会员），具体见3.1示例。
+调用所有API时，在header里传入`X-API-KEY`，其值为用户标识（需先申请开通API权限或购买企业会员），具体见3.1示例。
 
 ### 1.2 上传附件
 提问时如需上传附件，如PDF、DOCX、MP3等，需要先调用此接口
-```
+```bash
 POST https://openai.yige.space/api/usermedia/upload_media/
 参数：传入 file 文档
 具体见 3.1 示例上传
 ```
 
 ### 1.3 提问
-```
+```bash
 POST https://openai.yige.space/api/data/
 参数：
 {
@@ -29,7 +29,7 @@ POST https://openai.yige.space/api/data/
 }
 ```
 ### 1.4 返回
-```
+```json
 {
     'status': 'OK',
     'code': 201,
@@ -46,7 +46,7 @@ POST https://openai.yige.space/api/data/
 
 ### 1.5 取结果
 轮询下面的接口（建议1s一次），当返回status为2的时候表示已生成答案
-```
+```bash
 GET https://openai.yige.space/api/data/{id}/
 结果同1.4
 ```
